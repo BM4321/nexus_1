@@ -1,0 +1,72 @@
+2026-01-18 17:02:15,982 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 17:02:29,110 ERROR: Exception on /edit_profile [GET] [in /Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/projects/blog/app/routes.py", line 86, in edit_profile
+    form = EditProfileForm()
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/wtforms/form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EditProfileForm.__init__() missing 1 required positional argument: 'original_username'
+2026-01-18 17:02:35,911 ERROR: Exception on /edit_profile [GET] [in /Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/projects/blog/app/routes.py", line 86, in edit_profile
+    form = EditProfileForm()
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/wtforms/form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EditProfileForm.__init__() missing 1 required positional argument: 'original_username'
+2026-01-18 17:03:43,109 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 17:05:09,894 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 17:05:28,393 ERROR: Exception on /edit_profile [POST] [in /Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'edit_profile' did not return a valid response. The function either returned None or ended without a return statement.
+2026-01-18 20:12:59,896 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 20:14:14,116 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 20:15:54,831 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 22:38:54,874 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 22:39:14,650 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 22:39:17,577 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-18 22:54:20,540 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]

@@ -1,0 +1,89 @@
+2026-01-18 22:54:25,786 ERROR: Exception on /user/sheddy [GET] [in /Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: followers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/projects/blog/app/routes.py", line 75, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/mac/Desktop/projects/blog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mac/Desktop/projects/blog/app/templates/base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/projects/blog/app/templates/user.html", line 11, in block 'content'
+    <p>{{ user.followers_count() }} followers, {{ user.following_count() }} following.</p>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/projects/blog/app/models.py", line 71, in followers_count
+    return db.session.scalar(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 1840, in scalar
+    return self._proxied.scalar(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2413, in scalar
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/anaconda3/envs/blog/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: followers
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT user.id AS id, user.username AS username, user.email AS email, user.password_hash AS password_hash, user.about_me AS about_me, user.last_seen AS last_seen 
+FROM user, followers 
+WHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
