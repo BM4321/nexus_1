@@ -89,3 +89,4 @@ WHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-01-18 23:14:46,973 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
 2026-01-18 23:15:03,390 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
+2026-01-19 23:23:46,693 INFO: Microblog startup [in /Users/mac/Desktop/projects/blog/app/__init__.py:43]
